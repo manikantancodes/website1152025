@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaviGo Tech Solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Meta Tags -->
+    <meta name="title" content="Digital Services by NaviGo Tech Solutions | Web, App, Marketing & AI Solutions">
+    <meta name="description" content="Discover comprehensive digital services from NaviGo Tech Solutions, including web development, app development, digital marketing, branding, and AI-driven solutions. Drive growth with tailored strategies.">
+
+    <style>
+        /* Service Grid Layout */
+        .services-container {
+            padding: 4rem 0;
+            background: var(--light-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Brand Colors */
+        :root {
+            --primary-color: #1E90FF;      /* NaviGo Blue - Primary Brand Color */
+            --secondary-color: #4169E1;    /* Royal Blue - Secondary Brand Color */
+            --accent-color: #40E0D0;       /* Turquoise - Accent Color */
+            --dark-color: #0a192f;         /* Dark Blue - Dark Theme */
+            --light-color: #f8f9fa;        /* Light Gray - Light Theme */
+            --text-primary: #343a40;       /* Dark Gray - Primary Text */
+            --text-secondary: #6c757d;     /* Medium Gray - Secondary Text */
+            --text-light: #ffffff;         /* White - Light Text */
+            --success-color: #28a745;      /* Green - Success Messages */
+            --warning-color: #ffc107;      /* Yellow - Warning Messages */
+            --error-color: #dc3545;        /* Red - Error Messages */
+        }
+
+        /* Typography */
+        body {
+            font-family: 'Poppins', sans-serif;  /* Primary Font */
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Service Cards Base Style */
+        .service-card {
+            background: var(--light-color);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Service Icons */
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(30, 144, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Section Headers */
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        /* Feature Lists */
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        /* AI Service Cards - Dark Theme */
+        .ai-card {
+            background: var(--dark-color);
+            color: var(--text-light);
+            border: 1px solid rgba(30, 144, 255, 0.2);
+        }
+
+        .ai-card h4, 
+        .ai-card p {
+            color: var(--text-light);
+        }
+
+        /* Creative Service Cards */
+        .creative-card {
+            background: linear-gradient(145deg, var(--light-color), #ffffff);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* Accessibility */
+        .btn:focus,
+        .service-card:focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Print Styles */
+        @media print {
+            .service-card {
+                break-inside: avoid;
+                border: 1px solid #ddd;
+            }
+            
+            .service-icon {
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #fffff0; /* Ivory */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #fffff0; /* Dodger Blue to White */
+        }
+
+        .navbar-brand h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+        }
+
+        .navbar-brand span {
+            display: block; /* Make "Tech Solutions" appear below "NaviGo" */
+            color: #a9a9a9; /* Silver */
+            font-size: 1.2rem; /* Smaller font size for Tech Solutions */
+            margin-top: 5px; /* Space between NaviGo and Tech Solutions */
+        }
+
+        .hero-header {
+            background-color: #1e90ff; /* Dodger Blue */
+        }
+
+        .nav-item .nav-link {
+            color: #ffffff;
+        }
+
+        .nav-item .nav-link:hover {
+            color: #a9a9a9; /* Silver */
+        }
+
+        .hero-header h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-header p {
+            color: #fffff0; /* Ivory */
+        }
+
+        /* Smooth transition for scroll logo */
+        #scroll-logo {
+            transition: opacity 0.2s ease;
+        }
+
+        .service-item {
+            position: relative;
+            background-color: #FFFFF0;
+            border: 1px solid rgba(30, 144, 255, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            padding: 2rem;
+            margin: 0.8rem 0;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .small-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #1E90FF;
+            color: #FFFFF0;
+            font-size: 13px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            border: none;
+        }
+
+        .small-btn:hover {
+            background-color: #1C2035;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(30, 144, 255, 0.2);
+        }
+
+        .service-item h4 {
+            font-size: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .service-item p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-item .features-list li {
+            padding: 0.3rem 0;
+            font-size: 14px;
+        }
+
+        .service-item .d-inline-flex {
+            width: 50px !important;
+            height: 50px !important;
+            margin-bottom: 1rem;
+        }
+
+        .col-lg-6 {
+            padding: 0.8rem;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(30, 144, 255, 0.1);
+        }
+
+        .service-item .features-list {
+            margin-bottom: 1.5rem;
+        }
+
+        .service-item .features-list li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+
+        .service-item .features-list i {
+            color: #1E90FF;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .row {
+            margin: -1.5rem -1.5rem;
+        }
+
+        .col-lg-6 {
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .service-item {
+                padding: 2.5rem;
+                margin: 1rem 0;
+            }
+            .row {
+                margin: -1rem -1rem;
+            }
+            .col-lg-6 {
+                padding: 1rem;
+            }
+        }
+
+        .specialized-services {
+            background: linear-gradient(135deg, #1E90FF, #1C2035);
+            padding: 80px 0;
+        }
+
+        .specialized-services .service-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 20px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            color: #1C2035;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(30, 144, 255, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(30, 144, 255, 0.1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: #1E90FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .service-icon i {
+            color: #ffffff;
+            font-size: 28px;
+        }
+
+        .price-tag {
+            display: none;
+        }
+
+        .package-card {
+            display: none;
+        }
+
+        .feature-list {
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #1E90FF;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .accordion-item {
+            border: 1px solid rgba(30, 144, 255, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .accordion-button {
+            background-color: #ffffff;
+            color: #1C2035;
+            font-weight: 600;
+            padding: 1.25rem;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #1E90FF;
+            color: #ffffff;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(30, 144, 255, 0.1);
+        }
+
+        .accordion-body {
+            padding: 2rem;
+            background-color: #ffffff;
+        }
+
+        .service-content .lead {
+            color: #1C2035;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .service-content .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .service-content .feature-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .service-content .feature-list li:before {
+            content: "✓";
+            color: #1E90FF;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .success-story {
+            background-color: rgba(30, 144, 255, 0.05);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .btn-primary {
+            background-color: #1E90FF;
+            border-color: #1E90FF;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #1C2035;
+            border-color: #1C2035;
+        }
+
+        /* Service Cards Styles */
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #1E90FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-icon i {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #1E90FF;
+        }
+
+        .price-tag {
+            color: #1E90FF;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Service Item Styles */
+        .service-item {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(30, 144, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #666;
+        }
+
+        .service-list li i {
+            width: 20px;
+        }
+
+        .btn-primary {
+            background-color: #1E90FF;
+            border-color: #1E90FF;
+        }
+
+        .btn-primary:hover {
+            background-color: #1C2035;
+            border-color: #1C2035;
+        }
+
+        .text-primary {
+            color: #1E90FF !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .service-item {
+                padding: 2rem !important;
+            }
+        }
+
+        /* Add styles for clickable containers */
+        .service-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        .service-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Performance Optimizations */
+        .footer {
+            position: relative;
+            background: #1E90FF;
+            will-change: transform; /* Optimize animations */
+            -webkit-font-smoothing: antialiased; /* Smoother text */
+        }
+
+        /* Optimize hover transitions */
+        .service-item {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease; /* Faster, separate transitions */
+            padding: 5px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            backface-visibility: hidden; /* Reduce flickering */
+            transform: translateZ(0); /* Hardware acceleration */
+        }
+
+        /* Optimize social icons */
+        .btn-social {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+
+        /* Optimize layout performance */
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            contain: content; /* Improve rendering performance */
+        }
+
+        /* Reduce repaints */
+        .footer-contact, .footer-links {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transform: translateZ(0);
+        }
+
+        /* Optimize animations */
+        .wow.fadeIn {
+            animation-duration: 0.5s; /* Faster animation */
+        }
+
+        /* Prevent layout shifts */
+        .row.d-flex.justify-content-between {
+            margin: 0 -15px;
+            align-items: flex-start;
+            min-height: 300px; /* Set minimum height to prevent content jumps */
+        }
+
+        /* Optimize for mobile */
+        @media (max-width: 768px) {
+            .footer-contact, .footer-links {
+                text-align: center;
+                margin-bottom: 20px;
+                transform: none; /* Remove transforms on mobile */
+            }
+            
+            .services-list {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px; /* Smaller gap on mobile */
+            }
+            
+            .service-item {
+                padding: 4px 12px; /* Smaller padding on mobile */
+                font-size: 0.85rem; /* Slightly smaller font on mobile */
+            }
+        }
+
+        /* Prevent FOUC (Flash of Unstyled Content) */
+        .footer {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(30, 144, 255, 0.9), rgba(30, 144, 255, 0.7)), url('img/services/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Service Cards */
+        .service-card {
+            padding: 2rem;
+            border-radius: 15px;
+            background: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(30, 144, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 1.8rem;
+            color: #1E90FF;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #6c757d;
+        }
+
+        .service-features li i {
+            color: #1E90FF;
+            margin-right: 10px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #1E90FF;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-card {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Enhanced Animations */
+        .service-card {
+            transform-origin: center;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(30, 144, 255, 0.2);
+        }
+
+        .service-features li {
+            transition: all 0.3s ease;
+            transform: translateX(0);
+        }
+
+        .service-card:hover .service-features li {
+            transform: translateX(5px);
+        }
+
+        .service-features li:nth-child(2) {
+            transition-delay: 0.05s;
+        }
+
+        .service-features li:nth-child(3) {
+            transition-delay: 0.1s;
+        }
+
+        .btn-primary {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255,255,255,0.2);
+            transition: width 0.3s ease;
+        }
+
+        .btn-primary:hover:after {
+            width: 100%;
+        }
+
+        /* Service Category Styles */
+        .service-category {
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .service-category:last-child {
+            border-bottom: none;
+        }
+
+        .service-category h3 {
+            color: #1E90FF;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .service-category h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #1E90FF;
+        }
+
+        /* Wow Animation Customization */
+        .wow {
+            visibility: hidden;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* Additional Animation Styles */
+        .service-card {
+            animation-duration: 0.4s;
+            animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .service-card:hover .service-icon i {
+            animation: iconBounce 0.5s ease;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .service-features li {
+            opacity: 0.9;
+            transform: translateX(0);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-features li {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        /* Staggered Animation Delays for Features */
+        .service-features li:nth-child(1) { transition-delay: 0.1s; }
+        .service-features li:nth-child(2) { transition-delay: 0.2s; }
+        .service-features li:nth-child(3) { transition-delay: 0.3s; }
+        .service-features li:nth-child(4) { transition-delay: 0.4s; }
+
+        /* Digital Marketing Section Specific Styles */
+        .service-category .service-card .service-icon {
+            background: rgba(30, 144, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .service-category .service-card:hover .service-icon {
+            background: rgba(30, 144, 255, 0.2);
+            transform: rotate(360deg);
+        }
+
+        .service-category .service-card:hover .service-icon i {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Enhanced Feature List Animation */
+        .service-features li {
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li i {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-features li i {
+            color: #1E90FF;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        /* Creative Services Specific Styles */
+        .creative-card {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border: none;
+            transition: all 0.4s ease;
+        }
+
+        .creative-card:hover {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .creative-icon {
+            background: linear-gradient(145deg, #1E90FF, #4169E1);
+            color: white;
+            transition: all 0.5s ease;
+        }
+
+        .creative-icon i {
+            color: white;
+            transition: all 0.5s ease;
+        }
+
+        .creative-card:hover .creative-icon {
+            transform: rotate(360deg);
+            background: linear-gradient(145deg, #4169E1, #1E90FF);
+        }
+
+        .creative-card:hover .service-features li {
+            transform: translateX(10px);
+            color: #4169E1;
+        }
+
+        .creative-btn {
+            background: linear-gradient(145deg, #1E90FF, #4169E1);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .creative-btn:hover {
+            background: linear-gradient(145deg, #4169E1, #1E90FF);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(65, 105, 225, 0.3);
+        }
+
+        /* Enhanced Animations */
+        .creative-card .service-features li {
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .creative-card .service-features li::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 0;
+            height: 2px;
+            background: #4169E1;
+            transition: all 0.4s ease;
+        }
+
+        .creative-card:hover .service-features li::before {
+            width: 5px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .creative-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* AI Services Specific Styles */
+        .ai-card {
+            background: linear-gradient(165deg, #1a1a1a, #2a2a2a);
+            color: #fff;
+            border: 1px solid rgba(30, 144, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-card h4, .ai-card p {
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ai-glow {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(30, 144, 255, 0.15);
+            border-radius: 50%;
+            filter: blur(20px);
+            top: -75px;
+            right: -75px;
+            transition: all 0.5s ease;
+        }
+
+        .ai-card:hover .ai-glow {
+            transform: scale(1.5);
+            background: rgba(30, 144, 255, 0.25);
+        }
+
+        .ai-icon {
+            background: linear-gradient(145deg, #1E90FF, #4169E1);
+            box-shadow: 0 0 20px rgba(30, 144, 255, 0.3);
+        }
+
+        .ai-card:hover .ai-icon {
+            animation: pulse 1.5s infinite;
+        }
+
+        .ai-card .service-features li {
+            color: #e0e0e0;
+            border-left: 2px solid transparent;
+            padding-left: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .ai-card:hover .service-features li {
+            border-left: 2px solid #1E90FF;
+            padding-left: 20px;
+        }
+
+        .ai-btn {
+            background: linear-gradient(145deg, #1E90FF, #4169E1);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .ai-btn:hover::after {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(30, 144, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .ai-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Additional AI-Powered Services Section */
+        .service-category mb-5 {
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .service-category:last-child {
+            border-bottom: none;
+        }
+
+        .service-category h3 {
+            color: #1E90FF;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .service-category h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #1E90FF;
+        }
+
+        /* Advanced AI Services Styles */
+        .ai-advanced-card {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #fff;
+            border: 1px solid rgba(64, 224, 208, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-circuit-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('img/circuit-pattern.png');
+            opacity: 0.1;
+            transition: all 0.5s ease;
+        }
+
+        .ai-advanced-card:hover .ai-circuit-overlay {
+            opacity: 0.2;
+            transform: scale(1.1);
+        }
+
+        .ai-advanced-icon {
+            background: linear-gradient(145deg, #00b4d8, #0077b6);
+            box-shadow: 0 0 25px rgba(0, 180, 216, 0.3);
+        }
+
+        .ai-tech-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(64, 224, 208, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #40E0D0;
+        }
+
+        .ai-advanced-btn {
+            background: linear-gradient(145deg, #00b4d8, #0077b6);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-advanced-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .ai-advanced-btn:hover::before {
+            left: 100%;
+        }
+
+        .ai-advanced-card .service-features li {
+            border-left: 3px solid transparent;
+            padding-left: 15px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .ai-advanced-card:hover .service-features li {
+            border-left: 3px solid #40E0D0;
+            padding-left: 20px;
+        }
+
+        /* Staggered Animation for Features */
+        .ai-advanced-card:hover .service-features li:nth-child(1) { transition-delay: 0.1s; }
+        .ai-advanced-card:hover .service-features li:nth-child(2) { transition-delay: 0.2s; }
+        .ai-advanced-card:hover .service-features li:nth-child(3) { transition-delay: 0.3s; }
+        .ai-advanced-card:hover .service-features li:nth-child(4) { transition-delay: 0.4s; }
+        .ai-advanced-card:hover .service-features li:nth-child(5) { transition-delay: 0.5s; }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 5px #40E0D0; }
+            50% { box-shadow: 0 0 20px #40E0D0; }
+            100% { box-shadow: 0 0 5px #40E0D0; }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .ai-advanced-card {
+                margin-bottom: 30px;
+            }
+            
+            .ai-tech-badge {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-xxl" style="background-color: #FFFFF0;">
+            <!-- Spinner Start -->
+            <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <!-- Spinner End -->
+            <!-- Navbar & Hero Start -->
+            
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <!-- Logo Section -->
+                <img id="default-logo" src="img/20241213_225245.png" alt="Logo" style="height: 100px; width: 100px; margin-right: 80px; margin-top: 3px;">
+                <img id="scroll-logo" src="img/20241213_225245.png" alt="Logo" style="height: 100px; width: 100px; margin-right: 80px; margin-top: 3px; display: none;">
+                
+                <a href="" class="navbar-brand p-0" style="display: flex; align-items: center; margin-left: -60px;">
+                    <h1 class="m-0">
+                        NaviGo
+                        <span>Tech Solutions</span>
+                    </h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="Services.html" class="nav-item nav-link active">Services</a>
+                        <a href="pricing.html" class="nav-item nav-link">Pricing</a>
+                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+<!-- Hero Header Section -->
+<!-- Replace the existing hero-header div with this -->
+<!-- Replace the existing hero-header section with this -->
+<div class="container-xxl py-5 bg-primary hero-header mb-5">
+    <div class="container my-5 py-5 px-lg-5">
+        <div class="row g-5 py-5">
+            <div class="col-12 text-center">
+                <h1 class="text-white animated zoomIn">Innovative Digital Solutions</h1>
+                <p class="text-white animated slideInDown mb-4">Transform Your Business with Our Comprehensive Digital Services</p>
+                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+<nav aria-label="breadcrumb">
+    <div class="service-nav" style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    ">
+        <a href="#web-development" 
+           onclick="document.querySelector('#web-development').scrollIntoView({behavior: 'smooth'})" 
+           class="nav-link service-link" 
+           style="
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                text-align: center;
+                min-width: 160px;
+           "
+           onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)'" 
+           onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+           Web Development
+        </a>
+
+        <a href="#app-development" 
+           onclick="document.querySelector('#app-development').scrollIntoView({behavior: 'smooth'})" 
+           class="nav-link service-link"
+           style="
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                text-align: center;
+                min-width: 160px;
+           "
+           onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)'" 
+           onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+           App Development
+        </a>
+
+        <a href="#digital-marketing" 
+           onclick="document.querySelector('#digital-marketing').scrollIntoView({behavior: 'smooth'})" 
+           class="nav-link service-link"
+           style="
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                text-align: center;
+                min-width: 160px;
+           "
+           onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)'" 
+           onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+           Digital Marketing
+        </a>
+
+        <a href="#branding"
+           onclick="document.querySelector('#branding').scrollIntoView({behavior: 'smooth'})"
+           class="nav-link service-link"
+           style="
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                text-align: center;
+                min-width: 160px;
+           "
+           onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)'" 
+           onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+           Branding
+        </a>
+
+        <a href="#ai-marketing"
+           onclick="document.querySelector('#ai-marketing').scrollIntoView({behavior: 'smooth'})"
+           class="nav-link service-link"
+           style="
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                text-align: center;
+                min-width: 160px;
+           "
+           onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)'" 
+           onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+           AI & Data Marketing
+        </a>
+
+        <a href="#advanced-ai"
+           onclick="document.querySelector('#advanced-ai').scrollIntoView({behavior: 'smooth'})"
+           class="nav-link service-link"
+           style="
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 25px;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                text-align: center;
+                min-width: 160px;
+           "
+           onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='translateY(-2px)'" 
+           onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+           Advanced AI Solutions
+        </a>
+    </div>
+</nav>
+                <div class="mt-4 text-center">
+                    <a href="contact.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft" 
+                       style="transition: all 0.3s ease; background-color: #fff;" 
+                       onmouseover="this.style.backgroundColor='#1E90FF'; this.style.color='#fff'" 
+                       onmouseout="this.style.backgroundColor='#fff'; this.style.color='#000'">
+                        Get Started
+                    </a>
+                    <a href="#services" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<style>
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-image {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-image:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+</style>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar & Hero End -->
+        </div>
+    </header>
+
+<div class="container-xxl py-5" id="services">
+    <div class="container py-5 px-lg-5">
+        <!-- Section Title -->
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h2 class="mb-5">Our Digital Solutions</h2>
+        </div>
+
+        <!-- Web & App Development Section -->
+        <div id="web-development" class="service-category mb-5">
+            <h3 class="text-center mb-4 wow fadeInUp">Web Development</h3>
+            <div class="row g-4">
+                <!-- Static Websites -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h4>Static Websites</h4>
+                        <p>Professional and responsive static websites perfect for small businesses.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> Fast Loading Speed</li>
+                            <li><i class="fas fa-check"></i> SEO Optimized</li>
+                            <li><i class="fas fa-check"></i> Mobile-Friendly</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Dynamic Websites -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Dynamic Websites</h4>
+                        <p>Interactive websites with CMS integration and dynamic content management.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> CMS Integration</li>
+                            <li><i class="fas fa-check"></i> User Management</li>
+                            <li><i class="fas fa-check"></i> Database Integration</li>
+                            <li><i class="fas fa-check"></i> Custom Admin Panel</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- E-commerce Websites -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h4>E-commerce Websites</h4>
+                        <p>Full-featured online stores with secure payment integration.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
+                            <li><i class="fas fa-check"></i> Inventory Management</li>
+                            <li><i class="fas fa-check"></i> Order Tracking System</li>
+                            <li><i class="fas fa-check"></i> Customer Management</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Start Selling</a>
+                    </div>
+                </div>
+<!-- App Development Section -->
+<div id="app-development" class="service-category mb-5">
+    <h3 class="text-center mb-4 wow fadeInUp">App Development</h3>
+    <div class="row g-4 justify-content-center">
+        <!-- Single-Platform Apps -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h4 class="mb-3">Single-Platform Apps</h4>
+                <p class="mb-4">Native iOS and Android applications tailored for specific platforms.</p>
+                <ul class="service-features list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Native iOS Development</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Native Android Development</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Platform-Specific Features</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>App Store Optimization</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary mt-auto">Build Your App</a>
+            </div>
+        </div>
+
+        <!-- Cross-Platform Apps -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-mobile"></i>
+                </div>
+                <h4 class="mb-3">Cross-Platform Apps</h4>
+                <p class="mb-4">Unified applications that work seamlessly across multiple platforms.</p>
+                <ul class="service-features list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>iOS & Android Support</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Single Codebase</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Cost-Effective Development</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Faster Time-to-Market</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary mt-auto">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise-Level Apps -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h4 class="mb-3">Enterprise-Level Apps</h4>
+                <p class="mb-4">Scalable and secure applications for large organizations.</p>
+                <ul class="service-features list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Custom Enterprise Solutions</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Advanced Security Features</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Scalable Architecture</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Integration Capabilities</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary mt-auto">Enterprise Solutions</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Digital Marketing Section -->
+        <div id="digital-marketing" class="service-category mb-5"></div>
+            <h3 class="text-center mb-4 wow fadeInUp">Digital Marketing Services</h3>
+            <div class="row g-4">
+                <!-- SEO -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Search Engine Optimization (SEO)</h4>
+                        <p>Boost your website's visibility and rank higher in search results.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Keyword Research & Analysis</li>
+                            <li><i class="fas fa-check"></i> On-Page SEO Optimization</li>
+                            <li><i class="fas fa-check"></i> Technical SEO Improvements</li>
+                            <li><i class="fas fa-check"></i> Link Building Strategies</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Boost Rankings</a>
+                    </div>
+                </div>
+
+                <!-- Social Media Marketing -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h4>Social Media Marketing</h4>
+                        <p>Engage your audience and build brand presence on social platforms.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Social Media Strategy</li>
+                            <li><i class="fas fa-check"></i> Content Creation & Curation</li>
+                            <li><i class="fas fa-check"></i> Community Management</li>
+                            <li><i class="fas fa-check"></i> Social Media Advertising</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Grow Social Presence</a>
+                    </div>
+                </div>
+
+                <!-- Content Marketing -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h4>Content Marketing</h4>
+                        <p>Create valuable content that attracts and retains your target audience.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Content Strategy Planning</li>
+                            <li><i class="fas fa-check"></i> Blog Writing & Management</li>
+                            <li><i class="fas fa-check"></i> Infographic Design</li>
+                            <li><i class="fas fa-check"></i> Video Content Creation</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Start Creating</a>
+                    </div>
+                </div> 
+        <!-- Email Marketing -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-card h-100">
+                <div class="service-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h4>Email Marketing</h4>
+                <p>Connect with your audience through targeted email campaigns.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Campaign Strategy</li>
+                    <li><i class="fas fa-check"></i> Email Template Design</li>
+                    <li><i class="fas fa-check"></i> Automation Workflows</li>
+                    <li><i class="fas fa-check"></i> Performance Tracking</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Start Campaigns</a>
+            </div>
+        </div>
+
+        <!-- PPC Advertising -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-card h-100">
+                <div class="service-icon">
+                    <i class="fas fa-ad"></i>
+                </div>
+                <h4>Pay-Per-Click (PPC) Advertising</h4>
+                <p>Drive targeted traffic and conversions through paid advertising.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Google Ads Management</li>
+                    <li><i class="fas fa-check"></i> Social Media Ads</li>
+                    <li><i class="fas fa-check"></i> Display Advertising</li>
+                    <li><i class="fas fa-check"></i> Remarketing Campaigns</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Start Advertising</a>
+            </div>
+        </div>
+
+        <!-- Analytics & Reporting -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="service-card h-100">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Analytics & Reporting</h4>
+                <p>Track, analyze, and optimize your digital marketing performance.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Performance Tracking</li>
+                    <li><i class="fas fa-check"></i> Custom Reporting</li>
+                    <li><i class="fas fa-check"></i> Data Analysis</li>
+                    <li><i class="fas fa-check"></i> ROI Optimization</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Get Insights</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-bottom: 80px;"></div>
+<!-- Branding & Creative Services Section -->
+<div class="service-category mb-5">
+    <h3 class="text-center mb-4 wow fadeInUp">Branding & Creative Services</h3>
+    <div class="row g-4 justify-content-center">
+        <!-- Logo Design -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h4 class="mb-3">Logo Design</h4>
+                <p class="mb-4">Create a memorable brand identity with unique and professional logo design.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Custom Logo Creation</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Multiple Concepts</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Vector Files</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Unlimited Revisions</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Design Your Logo</a>
+            </div>
+        </div>
+
+        <!-- Brand Guidelines -->
+        <div id="branding" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h4 class="mb-3">Brand Guidelines</h4>
+                <p class="mb-4">Establish consistent brand standards across all platforms and materials.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Color Palettes</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Typography Selection</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Usage Guidelines</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Brand Voice & Tone</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Create Guidelines</a>
+            </div>
+        </div>
+
+        <!-- Visual Identity -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h4 class="mb-3">Visual Identity</h4>
+                <p class="mb-4">Develop a cohesive visual language that reflects your brand's personality.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Brand Elements</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Marketing Materials</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Social Media Assets</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Business Stationery</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Build Identity</a>
+            </div>
+        </div>
+
+        <!-- Packaging Design -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <h4 class="mb-3">Packaging Design</h4>
+                <p class="mb-4">Create attractive and functional packaging that stands out on shelves.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Custom Packaging</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Label Design</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Product Photography</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Print Management</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Design Package</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI & Data-Driven Marketing Section -->
+<div id="ai-marketing" class="service-category mb-5">
+    <h3 class="text-center mb-4 wow fadeInUp">AI & Data-Driven Marketing</h3>
+    <div class="row g-4 justify-content-center">
+        <!-- AI-Powered Analytics -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h4 class="mb-3">AI-Powered Analytics</h4>
+                <p class="mb-4">Leverage advanced AI algorithms to gain deeper insights into your data.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Machine Learning Analysis</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Pattern Recognition</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Automated Reporting</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Real-time Insights</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Get AI Insights</a>
+            </div>
+        </div>
+
+        <!-- Personalized Campaigns -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <h4 class="mb-3">Personalized Campaigns</h4>
+                <p class="mb-4">Create targeted marketing campaigns using AI-driven customer insights.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Behavioral Analysis</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Dynamic Content</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Smart Segmentation</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>A/B Testing</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Start Personalizing</a>
+            </div>
+        </div>
+
+        <!-- Chatbots & Virtual Assistants -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h4 class="mb-3">Chatbots & Virtual Assistants</h4>
+                <p class="mb-4">Implement intelligent conversational AI to enhance customer service.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>24/7 Customer Support</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Natural Language Processing</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Multi-platform Integration</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Learning Capabilities</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Deploy AI Assistant</a>
+            </div>
+        </div>
+
+        <!-- Predictive Modeling -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="mb-3">Predictive Modeling</h4>
+                <p class="mb-4">Forecast trends and behaviors using advanced AI algorithms.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Customer Behavior Prediction</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Market Trend Analysis</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Risk Assessment</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>ROI Forecasting</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Predict Future</a>
+            </div>
+        </div>
+
+        <!-- Data Visualization -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h4 class="mb-3">Data Visualization</h4>
+                <p class="mb-4">Transform complex data into clear, actionable visual insights.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Interactive Dashboards</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Real-time Visualization</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Custom Reports</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Data Storytelling</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Visualize Data</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional AI-Powered Services Section -->
+<div id="advanced-ai" class="service-category mb-5">
+    <h3 class="text-center mb-4 wow fadeInUp">Advanced AI Solutions</h3>
+    <div class="row g-4 justify-content-center">
+        <!-- AI Content Generation -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-pen-nib"></i>
+                </div>
+                <h4 class="mb-3">AI Content Generation</h4>
+                <p class="mb-4">Automate and enhance your content creation process with advanced AI tools.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Blog Post Generation</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Social Media Captions</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Ad Copy Creation</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Content Optimization</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary mt-auto">Generate Content</a>
+            </div>
+        </div>
+
+        <!-- AI Customer Segmentation -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <h4 class="mb-3">AI Customer Segmentation</h4>
+                <p class="mb-4">Create hyper-targeted audience segments using advanced behavioral analysis.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Behavioral Pattern Analysis</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Dynamic Segmentation</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Predictive Demographics</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Purchase Pattern Recognition</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary mt-auto">Segment Audience</a>
+            </div>
+        </div>
+
+        <!-- AI-Powered Lead Scoring -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h4 class="mb-3">AI-Powered Lead Scoring</h4>
+                <p class="mb-4">Prioritize leads based on their conversion probability using AI insights.</p>
+                <ul class="service-features list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Automated Lead Scoring</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Conversion Probability Analysis</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Engagement Tracking</li>
+                    <li class="mb-2"><i class="fas fa-check me-2"></i>Priority-based Routing</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary mt-auto">Score Leads</a>
+            </div>
+        </div>
+        <!-- Voice Search Optimization -->
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-card h-100 text-center">
+                <div class="service-icon mx-auto mb-4">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <h4>Voice Search Optimization</h4>
+                <p>Optimize your digital presence for the future of search technology.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Natural Language Processing</li>
+                    <li><i class="fas fa-check"></i> Voice Query Optimization</li>
+                    <li><i class="fas fa-check"></i> Featured Snippet Targeting</li>
+                    <li><i class="fas fa-check"></i> Local Search Optimization</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary">Optimize Voice</a>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Services Grid End -->
+        <style>
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem 1rem;
+            }
+
+            .service-card {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                background: #fff;
+                border-radius: 15px;
+                padding: 2rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .service-features {
+                flex-grow: 1;
+                margin: 1.5rem 0;
+            }
+
+            .btn-primary {
+                margin-top: auto;
+            }
+
+            @media (max-width: 768px) {
+                .services-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+            }
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+                .services-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            .service-category {
+                margin-bottom: 4rem;
+            }
+
+            .service-category h3 {
+                margin-bottom: 2rem;
+            }
+        </style>
+    </div>
+</div>
+<!-- CTA Section Start -->
+<div class="container-fluid py-3 cta-section" style="background-color: #ffffff; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+    <div class="container py-3 px-lg-5">
+        <div class="row text-center">
+            <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="text-dark mb-3" style="color: #1C2035;">Ready to Elevate Your Business?</h2>
+                <p class="text-secondary mb-3">Let us help you achieve your goals with innovative digital solutions designed to drive growth.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="contact.html" class="btn btn-primary py-sm-2 px-sm-4" style="background-color: #1E90FF; border-color: #1E90FF;">Get a Free Consultation</a>
+                    <a href="#services" class="btn btn-outline-primary py-sm-2 px-sm-4" style="color: #1E90FF; border-color: #1E90FF;">View All Services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- CTA Section End -->
+    </main>
+<!-- Footer Start -->
+<div class="container-fluid text-light footer">
+    <div class="footer-top">
+        <div class="container py-5">
+            <!-- Clean footer layout -->
+            <div class="row justify-content-between align-items-start" style="margin: 0 -60px;">
+                <!-- Address Section -->
+                <div class="col-lg-3 col-md-3 footer-section" style="margin: 0 60px;">
+                    <h4 class="text-white mb-4">Our Office</h4>
+                    <div class="footer-info">
+                        <div class="d-flex align-items-center contact-item">
+                            <i class="fa fa-map-marker-alt me-3"></i>
+                            <span>Nungambakkam, Chennai</span>
+                        </div>
+                        <div class="d-flex align-items-center contact-item mt-3">
+                            <i class="fa fa-phone-alt me-3"></i>
+                            <span>+91 6380853075</span>
+                        </div>
+                        <div class="d-flex align-items-center contact-item mt-3">
+                            <i class="fa fa-envelope me-3"></i>
+                            <span>info@navigotechsolutions.com</span>
+                        </div>
+                        <div class="d-flex pt-4 gap-3 social-icons">
+                            <a class="social-btn" href="https://x.com/NavigoTech">
+                                <div class="social-circle">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                            </a>
+                            <a class="social-btn" href="https://www.facebook.com/NavigoTechsolutions/">
+                                <div class="social-circle">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                            </a>
+                            <a class="social-btn" href="https://www.instagram.com/navig_tech_solutions">
+                                <div class="social-circle">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                            </a>
+                            <a class="social-btn" href="https://www.linkedin.com/company/navigo-tech-solutions/">
+                                <div class="social-circle">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-3 footer-section" style="margin: 0 60px;">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="Services.html">Our Services</a>
+                        <a href="blog.html">Latest Blog</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-3 footer-section" style="margin: 0 60px;">
+                    <h4 class="text-white mb-4">Our Services</h4>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="Services.html">Web Development</a>
+                        <a href="Services.html">App Development</a>
+                        <a href="Services.html">Digital Marketing</a>
+                        <a href="Services.html">SEO Optimization</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Copyright Section -->
+    <div class="container-fluid copyright py-4">
+        <div class="container text-center">
+            &copy; 2024 <a href="#">NaviGo Tech Solutions</a>. All Rights Reserved.
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="bi bi-arrow-up"></i></a>
+    
+    <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/916380853075" class="whatsapp-chat" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Back to top button functionality
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.back-to-top').addClass('show');
+            } else {
+                $('.back-to-top').removeClass('show');
+            }
+        });
+
+        $('.back-to-top').click(function () {
+            $('html, body').animate({scrollTop: 0}, 'smooth');
+            return false;
+        });
+    </script>
+
+    <!-- Logo scroll effect -->
+    <script>
+        const defaultLogo = document.getElementById("default-logo");
+        const scrollLogo = document.getElementById("scroll-logo");
+
+        window.onscroll = function() {
+            if (window.scrollY > 50) {
+                defaultLogo.style.display = "none";
+                scrollLogo.style.display = "inline";
+            } else {
+                defaultLogo.style.display = "inline";
+                scrollLogo.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>

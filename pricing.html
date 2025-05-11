@@ -1,0 +1,2800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaviGo Tech Solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="Navigo Tech Solutions About">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1e90ff;
+            --deep-navy: #032B44;
+            --ivory: #fffff0;
+            --silver: #a9a9a9;
+            --dark: #232323;
+            --shadow-sm: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--ivory);
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+        }
+
+        h1 { font-size: 36px; font-weight: bold; }
+        h2 { font-size: 30px; font-weight: bold; }
+        h3 { font-size: 24px; font-weight: bold; }
+
+        .navbar {
+            background-color: var(--ivory);
+        }
+
+        .hero-header {
+            background-color: var(--primary);
+        }
+
+        .section-title {
+            color: var(--silver);
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .bg-light {
+            background-color: var(--ivory) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--deep-navy);
+            border-color: var(--deep-navy);
+        }
+
+        .feature-item {
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Price Display Adjustments */
+        .price-item .display-5 {
+            font-size: calc(1.2rem + 2vw); /* Responsive font size */
+            line-height: 1.2;
+            margin-bottom: 0;
+            word-wrap: break-word; /* Ensures text wraps */
+            overflow-wrap: break-word;
+        }
+
+        .price-item .align-top {
+            font-size: calc(0.8rem + 0.5vw) !important; /* Smaller currency symbol */
+            line-height: 2;
+        }
+
+        .price-item .align-bottom {
+            font-size: calc(0.7rem + 0.3vw) !important; /* Smaller period text */
+            line-height: 1.5;
+        }
+
+        /* For very small prices, keep original size */
+        .price-item .display-5.small-price {
+            font-size: calc(1rem + 1.5vw);
+        }
+
+        /* For longer prices, reduce size further */
+        .price-item .display-5.long-price {
+            font-size: calc(1rem + 1vw);
+        }
+
+        /* Container padding adjustment */
+        .price-item .border-bottom {
+            padding: 1.5rem 1rem;
+        }
+
+        /* Additional text styling */
+        .price-item .text-muted {
+            font-size: 0.875rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .price-item .display-5 {
+                font-size: calc(1rem + 1.5vw);
+            }
+            
+            .price-item .border-bottom {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .price-item .display-5 {
+                font-size: calc(0.9rem + 1vw);
+            }
+        }
+
+        /* Page Layout */
+        .container-xxl {
+            padding: 6rem 0;
+            background-color: var(--ivory);
+        }
+
+        /* Section Spacing */
+        .pricing-category {
+            margin-bottom: 5rem;
+        }
+
+        .pricing-category:last-child {
+            margin-bottom: 3rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-category h4 {
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .pricing-category h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* Grid Container */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Card Styling */
+        .price-item {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Grid */
+        @media (max-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Category Spacing */
+        .pricing-category {
+            margin-bottom: 4rem;
+        }
+
+        .pricing-category:last-child {
+            margin-bottom: 2rem;
+        }
+
+        /* Card Alignment */
+        .price-item {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .price-item .border-bottom {
+            padding: 2rem;
+        }
+
+        .price-item .p-4 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-features {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Button Alignment */
+        .btn-container {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .container-xxl {
+                padding: 4rem 0;
+            }
+            
+            .pricing-category {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container-xxl {
+                padding: 3rem 0;
+            }
+            
+            .col-lg-4 {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Compact Card Styling */
+        .price-item {
+            max-width: 350px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Smaller Header Section */
+        .price-item .border-bottom {
+            padding: 1.5rem;
+        }
+
+        /* Adjusted Typography */
+        .price-item h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-item .display-5 {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        /* Compact Features List */
+        .price-features {
+            padding: 1rem 1.5rem;
+            margin: 0;
+        }
+
+        .price-features li {
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
+        }
+
+        /* Smaller Button */
+        .price-item .btn {
+            padding: 0.5rem 1.5rem;
+            margin: 0.5rem 1.5rem 1.5rem;
+        }
+
+        /* Grid Spacing */
+        .row.g-4 {
+            gap: 1rem !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .price-item {
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Reset container overflow */
+        .container-fluid {
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: 0;
+            margin-left: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Remove bullet points from pricing cards */
+        .price-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .price-item li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .price-item li:last-child {
+            border-bottom: none;
+        }
+
+        /* Service Cards Styling */
+        .service-item {
+            background: #FFFFFF;
+            box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 45px rgba(30, 144, 255, 0.2);
+        }
+
+        .service-item .service-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item .service-img img {
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+
+        .service-item:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-item .service-detail {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .service-item h4 {
+            color: #0B2154;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover h4 {
+            color: #1E90FF;
+        }
+
+        .service-item p {
+            color: #696969;
+            margin: 15px 0;
+        }
+
+        
+
+        .service-item .btn:hover {
+            background: #0B2154;
+            transform: translateY(-2px);
+        }
+
+        /* Service Icon */
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1E90FF;
+            border-radius: 50%;
+            margin: -50px auto 20px;
+            position: relative;
+            z-index: 1;
+            color: #FFFFFF;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover .service-icon {
+            background: #0B2154;
+            transform: rotateY(180deg);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .service-item {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .service-item .service-detail {
+                padding: 20px;
+            }
+            
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin: -40px auto 15px;
+            }
+        }
+
+        /* Grid Layout */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        /* Card Styling */
+        .price-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .price-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Featured Item */
+        .featured-item {
+            border: 2px solid #1E90FF;
+            transform: scale(1.02);
+        }
+
+        .featured-item:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        /* Price Features */
+        .price-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .price-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+
+        /* Text Colors */
+        .text-primary {
+            color: #1E90FF !important;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: #1E90FF;
+            border-color: #1E90FF;
+        }
+
+        .btn-primary:hover {
+            background-color: #0B2154;
+            border-color: #0B2154;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-item {
+                transform: none;
+            }
+            
+            .featured-item:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Pricing Category Styling */
+        .pricing-category {
+            padding: 40px 0;
+        }
+
+        .pricing-category h4 {
+            color: #0B2154;
+            margin-bottom: 30px;
+        }
+
+        /* Price Item Styling */
+        .price-item {
+            background: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+            transition: .5s;
+            overflow: hidden;
+        }
+
+        .price-item:hover {
+            box-shadow: 0 0 45px rgba(0, 0, 0, .15);
+            transform: translateY(-5px);
+        }
+
+        /* Featured Item */
+        .price-item.featured-item {
+            position: relative;
+            transform: scale(1.05);
+            z-index: 1;
+            box-shadow: 0 0 45px rgba(30, 144, 255, 0.15);
+        }
+
+        .price-item.featured-item:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        /* Header Section */
+        .price-item .border-bottom {
+            border-color: rgba(0, 0, 0, .1) !important;
+        }
+
+        .price-item h5 {
+            color: #1E90FF;
+            font-weight: 600;
+        }
+
+        .price-item h1 {
+            color: #0B2154;
+        }
+
+        .price-item h1 small {
+            color: #0B2154;
+            font-weight: 400;
+        }
+
+        /* Features List */
+        .price-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            color: #696969;
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
+        }
+
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+
+        .price-features li i {
+            color: #1E90FF;
+            font-size: 14px;
+            width: 20px;
+        }
+
+        /* Button Styling */
+        .price-item .btn {
+            padding: 12px 30px;
+            font-weight: 500;
+            transition: .5s;
+        }
+
+        .price-item .btn-primary {
+            background: #1E90FF;
+            border-color: #1E90FF;
+        }
+
+        .price-item .btn-primary:hover {
+            background: #0B2154;
+            border-color: #0B2154;
+        }
+
+        /* Animation */
+        .wow {
+            visibility: hidden;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991.98px) {
+            .price-item.featured-item {
+                transform: scale(1.02);
+            }
+            
+            .price-item.featured-item:hover {
+                transform: scale(1.02) translateY(-5px);
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .price-item {
+                margin-bottom: 30px;
+            }
+            
+            .price-item.featured-item {
+                transform: scale(1);
+            }
+            
+            .price-item.featured-item:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Refined Popular Tag Styling */
+        .price-item.featured-item {
+            position: relative;
+            transform: scale(1.05);
+            z-index: 1;
+            box-shadow: 0 0 45px rgba(30, 144, 255, 0.15);
+        }
+
+       .price-item.featured-item::before {
+           content: "Popular";
+           position: absolute;
+           top: 15px;
+           right: -30px;
+           background-color: #1E90FF; /* Solid background color */
+           color: #FFFFFF; /* White text */
+           font-size: 12px;
+           padding: 3px 30px;
+           transform: rotate(45deg);
+           z-index: 1;
+           font-weight: 400;
+           letter-spacing: 0.5px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       }
+
+        /* Refined ribbon background */
+        .price-item.featured-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 70px 70px 0; /* Smaller size */
+            border-color: transparent rgba(30, 144, 255, 0.1) transparent transparent; /* More transparent */
+            z-index: 0;
+        }
+
+        /* Hover effect */
+        .price-item.featured-item:hover::before {
+            background: rgba(30, 144, 255, 1); /* Full color on hover */
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            .price-item.featured-item::before {
+                font-size: 11px;
+                padding: 2px 25px;
+                right: -25px;
+                top: 12px;
+            }
+            
+            .price-item.featured-item::after {
+                border-width: 0 60px 60px 0;
+            }
+        }
+
+        /* Regular Card Hover Effect */
+        .price-item {
+            background: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            top: 0;
+        }
+
+        .price-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(30, 144, 255, 0.15);
+        }
+
+        .price-item:hover .border-bottom {
+            border-color: rgba(30, 144, 255, 0.2) !important;
+            background: rgba(30, 144, 255, 0.03);
+        }
+
+        .price-item:hover h5.text-primary {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        /* Featured Card Specific Hover */
+        .price-item.featured-item {
+            background: linear-gradient(to bottom, #ffffff, #f8fbff);
+            border: 2px solid rgba(30, 144, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        /* Reset featured item styles */
+        .price-item.featured-item {
+            background: #ffffff;
+            border: 2px solid rgba(30, 144, 255, 0.1);
+            box-shadow: none;
+            transform: none;
+        }
+        
+        /* Remove the Popular tag and triangular overlay */
+        .price-item.featured-item::before,
+        .price-item.featured-item::after {
+            display: none;
+        }
+        
+        /* Remove hover effects */
+        .price-item.featured-item:hover {
+            transform: none;
+            box-shadow: none;
+
+        }
+
+        /* Button Hover Effects */
+        .price-item:not(.featured-item):hover .btn-primary {
+            background: #0B2154;
+            border-color: #0B2154;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(11, 33, 84, 0.2);
+        }
+
+        .price-item.featured-item:hover .btn-primary {
+            background: #1E90FF;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
+        }
+
+        /* Price Text Hover Effect */
+        .price-item:hover .display-5 {
+            color: #1E90FF;
+            transition: all 0.3s ease;
+        }
+
+        /* Feature List Hover Effect */
+        .price-item:hover .price-features li {
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+
+        .price-item .price-features li {
+            transition: all 0.3s ease;
+        }
+
+        /* Transitions */
+        .price-item *,
+        .price-item.featured-item * {
+            transition: all 0.3s ease;
+        }
+
+        /* Hover State Indicators */
+        .price-item:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background: linear-gradient(to bottom right, rgba(30, 144, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .price-item.featured-item:hover::before {
+            background: linear-gradient(to bottom right, rgba(30, 144, 255, 0.2), transparent);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .price-item:hover,
+            .price-item.featured-item:hover {
+                transform: translateY(-5px);
+            }
+            
+            .price-item.featured-item {
+                transform: scale(1.02);
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .price-item.featured-item {
+                transform: scale(1);
+            }
+            
+            .price-item.featured-item:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Ribbon Tag Styling */
+        .price-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-item::before {
+            content: "POPULAR";
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            transform: rotate(45deg);
+            background: #1E90FF;
+            color: #FFFFF0;
+            padding: 8px 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .featured-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 70px 70px 0;
+            border-color: transparent #1873CC transparent transparent;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <!-- Logo Section -->
+            <img id="default-logo" src="img/20241213_225245.png" alt="Logo" style="height: 100px; width: 100px; margin-right: 80px; margin-top: 3px;">
+            <!-- Changed to scroll logo -->
+            <img id="scroll-logo" src="img/20241213_225245.png" alt="Logo" style="height: 100px; width: 100px; margin-right: 80px; margin-top: 3px; display: none;">
+
+            <a href="" class="navbar-brand p-0" style="display: flex; align-items: center; margin-left: -60px;">
+                <h1 class="m-0">
+                    NaviGo
+                    <span>Tech Solutions</span>
+                    <!-- Tech Solutions under NaviGo -->
+                </h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="Services.html" class="nav-item nav-link">Services</a>
+                    <a href="pricing.html" class="nav-item nav-link">Pricing</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+<div class="container-xxl py-5 bg-primary hero-header mb-5">
+    <div class="container my-5 py-5 px-lg-5">
+        <div class="row g-5 py-5">
+            <div class="col-12 text-center">
+                <h1 class="text-white animated zoomIn">Choose the Right Plan</h1>
+                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb justify-content-center">
+        <div class="service-links">
+            <ul class="service-menu">
+                <li><a href="#digital-marketing" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">Digital Marketing</a></li>
+                <li><a href="#web-development" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">Web Development</a></li>
+                <li><a href="#app-development" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">App Development</a></li>
+                <li><a href="#seo" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">SEO</a></li>
+                <li><a href="#ai-data-driven-marketing" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">AI & Data-Driven Marketing</a></li>
+                <li><a href="#content-marketing" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">Content Marketing</a></li>
+                <li><a href="#branding" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">Branding & Creative</a></li>
+                <li><a href="#video-marketing" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">Video Marketing</a></li>
+                <li><a href="#ppc-advertising" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">PPC Advertising</a></li>
+                <li><a href="#email-marketing" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">Email Marketing</a></li>
+                <li><a href="#website-maintenance" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">Website Maintenance</a></li>
+                <li><a href="#ui-ux-design" class="service-link highlight-link btn btn-outline-light btn-hover-primary mb-2">UI/UX Design</a></li>
+            </ul>
+        </div>
+    </ol>
+</nav>
+
+<style>
+.service-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.service-link {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.service-link:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hover-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .service-link {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+</style>
+
+<style>
+.highlight-link {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.highlight-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-decoration: none;
+}
+
+.highlight-link:active {
+    transform: translateY(0);
+}
+
+.service-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .highlight-link {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+</style>
+
+                <style>
+                    .service-links {
+                        margin-top: 2rem;
+                    }
+
+                    .service-menu {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+
+                    .service-link {
+                        color: rgba(255, 255, 255, 0.8);
+                        text-decoration: none;
+                        padding: 0.5rem 1rem;
+                        border-radius: 20px;
+                        transition: all 0.3s ease;
+                        font-size: 0.9rem;
+                    }
+
+                    .service-link:hover {
+                        color: #fff;
+                        background: rgba(255, 255, 255, 0.1);
+                        transform: translateY(-2px);
+                        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    }
+
+                    .service-menu li {
+                        margin: 0.25rem;
+                    }
+
+                    @media (max-width: 768px) {
+                        .service-menu {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+
+                        .service-link {
+                            padding: 0.3rem 0.8rem;
+                            font-size: 0.85rem;
+                        }
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Navbar & Hero End -->
+    <script>
+        // Get references to both logos
+        const defaultLogo = document.getElementById("default-logo");
+        const scrollLogo = document.getElementById("scroll-logo");
+
+        // Function to toggle logo on scroll
+        window.onscroll = function() {
+            if (window.scrollY > 50) { // Scroll threshold (adjust as needed)
+                defaultLogo.style.display = "none"; // Hide default logo
+                scrollLogo.style.display = "inline"; // Show scroll logo
+            } else {
+                defaultLogo.style.display = "inline"; // Show default logo
+                scrollLogo.style.display = "none"; // Hide scroll logo
+            }
+        };
+    </script>
+ 
+<!-- Pricing Section Start -->
+<div id="pricing-section">
+    </div>
+        <div class="container-xxl py-5">
+            <div class="container">
+                <!-- Main Content -->
+                <div class="container">
+                    <!-- Priority Services -->
+                    <div class="section-header wow fadeInUp" data-wow-delay="0.1s">
+                        <div id="digital-marketing"></div>
+                        <h6 class="text-primary text-uppercase">Our Services</h6>
+                        <h1 class="mb-5">Digital Marketing Solutions</h1>
+                    </div>
+
+                    <!-- Social Media Marketing -->
+                    <div class="pricing-category">
+                        <h4 class="text-center">Social Media Marketing</h4>
+                        <div class="pricing-grid">
+                            <!-- Basic Package -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Basic Package</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>8,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>2 Social Platforms</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>12 Posts per Month</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Basic Analytics</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Community Management</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Professional Package -->
+                            <div class="price-item featured-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Professional Package</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>15,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>4 Social Platforms</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>20 Posts per Month</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Advanced Analytics</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Paid Advertising</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Content Calendar</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Enterprise Package -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Enterprise Package</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>25,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>All Social Platforms</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Unlimited Posts</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Strategy</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Influencer Marketing</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>24/7 Support</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PPC Advertising Services -->
+                    <div class="pricing-category">
+                        <div id="ppc-advertising"></div>
+                        <h4 class="text-center mb-4">PPC Advertising Services</h4>
+                        <div class="pricing-grid">
+                            <!-- Starter PPC Package -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Starter PPC</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>10,000
+                                        <small class="align-bottom">/month</small>
+                                    </h1>
+                                    <small class="text-muted">+ Ad Spend</small>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Google Ads Setup</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Keyword Research</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>2 Ad Campaigns</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Basic Ad Copy</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Monthly Reporting</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Professional PPC Package -->
+                            <div class="price-item featured-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Professional PPC</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>25,000
+                                        <small class="align-bottom">/month</small>
+                                    </h1>
+                                    <small class="text-muted">+ Ad Spend</small>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Google & Meta Ads</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Advanced Keyword Research</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>5 Ad Campaigns</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>A/B Testing</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Conversion Tracking</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Bi-weekly Optimization</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Detailed Analytics</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Enterprise PPC Package -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Enterprise PPC</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>50,000
+                                        <small class="align-bottom">/month</small>
+                                    </h1>
+                                    <small class="text-muted">+ Ad Spend</small>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>All Ad Platforms</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Strategy</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Unlimited Campaigns</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Dynamic Remarketing</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Audience Creation</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Weekly Optimization</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>ROI Tracking</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Dedicated Manager</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Email Marketing Services -->
+                    <div class="pricing-category">
+                        <h4 class="text-center">Email Marketing Services</h4>
+                        <div class="pricing-grid">
+                            <!-- Basic Email Marketing -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Basic Email Marketing</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>5,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Newsletter Setup</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>2 Campaigns/Month</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Basic Templates</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>List Management</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Basic Analytics</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+            
+                            <!-- Behavioral Campaigns -->
+                            <div class="price-item featured-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Behavioral Campaigns</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>8,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Triggered Emails</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Behavior Tracking</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Automation Workflows</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Segmentation</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>A/B Testing</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Advanced Analytics</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+            
+                            <!-- Enterprise Email Solutions -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Enterprise Email</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>15,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Strategy</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Dynamic Content</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>API Integration</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Advanced Automation</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Dedicated Manager</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Priority Support</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Email Marketing Add-ons -->
+                    <div class="pricing-category">
+                        <div id="email-marketing"></div>
+                        <h4 class="text-center">Email Marketing Add-ons</h4>
+                        <div class="pricing-grid">
+                            <!-- Deliverability Optimization -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Deliverability Package</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>5,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Spam Score Checks</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Authentication Setup</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Inbox Placement</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Monthly Reports</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+            
+                            <!-- Template Design -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Custom Templates</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>3,000<small class="align-bottom">/template</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Responsive Design</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Brand Integration</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Elements</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Testing Included</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content Marketing Services -->
+                    <div class="pricing-category">
+                        <div id="content-marketing"></div>
+                        <h4 class="text-center">Content Marketing</h4>
+                        <div class="pricing-grid">
+                            <!-- Content Strategy -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Content Strategy</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>10,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Content Calendar</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Audience Research</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Competitor Analysis</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Distribution Strategy</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Content Creation -->
+                            <div class="price-item featured-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Content Creation</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>5,000<small class="align-bottom">/piece</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Research & Writing</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Professional Editing</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Graphics</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>SEO Optimization</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Content Repurposing -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Content Repurposing</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>3,000<small class="align-bottom">/project</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Blog to Infographic</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Social Media Snippets</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Video Scripts</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Multi-format Adaptation</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Web Development Section -->
+                    <div class="pricing-category mb-5">
+                        <div class="section-header text-center">
+                            <div id="web-development"></div>
+                            <h4 class="mb-4">Web Development Services</h4>
+                        </div>
+                        
+                        <div class="pricing-grid">
+                            <!-- Basic Package -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Basic Website</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>15,000
+                                        <small class="align-bottom">/project</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>5 Pages Website</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Mobile Responsive</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Contact Form</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Basic SEO</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Professional Package -->
+                            <div class="price-item featured-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Professional Website</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>35,000
+                                        <small class="align-bottom">/project</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>10 Pages Website</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Advanced Features</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>CMS Integration</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Advanced SEO</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Analytics Setup</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Enterprise Package -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Enterprise Website</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>50,000+
+                                        <small class="align-bottom">/project</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Design</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Advanced Features</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>API Integration</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Database</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Premium Support</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile App Development -->
+                    <div class="pricing-category mb-5">
+                        <div class="section-header text-center">
+                            <div id="app-development"></div>
+                            <h4 class="mb-4">App Development Services</h4>
+                        </div>
+                        
+                        <div class="pricing-grid">
+                            <!-- Basic Package -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Basic App</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>25,000
+                                        <small class="align-bottom">/project</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Basic Features</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>User Authentication</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Basic UI/UX</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Basic Support</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Professional Package -->
+                            <div class="price-item featured-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Professional App</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>45,000
+                                        <small class="align-bottom">/project</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Advanced Features</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Payment Integration</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom UI/UX</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Analytics</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Priority Support</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Enterprise Package -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Enterprise App</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>75,000+
+                                        <small class="align-bottom">/project</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Custom Development</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Multiple Platforms</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>API Integration</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Scalable Architecture</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>24/7 Support</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEO Services -->
+                    <div class="pricing-category">
+                        <div id="seo"></div>
+                        <h4 class="text-center">Search Engine Optimization (SEO)</h4>
+                        <div class="pricing-grid">
+                            <!-- Technical SEO -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Technical SEO</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>15,000<small class="align-bottom">/audit</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Site Speed Analysis</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Mobile Optimization</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Crawlability Review</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Technical Fixes</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Local SEO -->
+                            <div class="price-item featured-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Local SEO</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>20,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>GMB Optimization</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Local Keywords</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Citation Management</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Review Management</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- E-commerce SEO -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">E-commerce SEO</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>25,000<small class="align-bottom">/month</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Product Optimization</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Schema Markup</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Category Pages SEO</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>CRO Implementation</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- AI & Data-Driven Marketing Services -->
+<div class="pricing-category">
+    <div id="ai-data-driven-marketing"></div>
+    <h4 class="text-center mb-4">AI & Data-Driven Marketing</h4>
+
+    <!-- AI-Powered Analytics -->
+    <div class="pricing-category">
+        <h4 class="text-center">AI-Powered Analytics</h4>
+        <div class="pricing-grid">
+            <!-- Basic Analytics Package -->
+            <div class="price-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Basic Analytics Package</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>15,000<small class="align-bottom">/month</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Machine Learning Analysis</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Pattern Recognition</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Automated Reporting</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Advanced Analytics Package -->
+            <div class="price-item featured-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Advanced Analytics Package</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>30,000<small class="align-bottom">/month</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Real-time Insights</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Custom Dashboards</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Predictive Modeling</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Enterprise Analytics Package -->
+            <div class="price-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Enterprise Analytics Package</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>50,000+<small class="align-bottom">/month</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Full Data Integration</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Custom Algorithm Development</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Dedicated Analyst Support</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personalized Campaigns -->
+    <div class="pricing-category">
+        <h4 class="text-center">Personalized Campaigns</h4>
+        <div class="pricing-grid">
+            <!-- Starter Campaigns -->
+            <div class="price-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Starter Campaigns</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>20,000<small class="align-bottom">/campaign</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Behavioral Analysis</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Smart Segmentation</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Basic A/B Testing</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Professional Campaigns -->
+            <div class="price-item featured-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Professional Campaigns</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>40,000<small class="align-bottom">/campaign</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Dynamic Content Creation</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Advanced Segmentation</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Multi-channel Optimization</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Enterprise Campaigns -->
+            <div class="price-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Enterprise Campaigns</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>75,000+<small class="align-bottom">/campaign</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Hyper-targeted Audiences</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Cross-platform Integration</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>ROI Tracking</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbots & Virtual Assistants -->
+    <div class="pricing-category">
+        <h4 class="text-center">Chatbots & Virtual Assistants</h4>
+        <div class="pricing-grid">
+            <!-- Basic Chatbot -->
+            <div class="price-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Basic Chatbot</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>25,000<small class="align-bottom">/project</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Natural Language Processing</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>FAQ Automation</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Single Platform Integration</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Professional Chatbot -->
+            <div class="price-item featured-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Professional Chatbot</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>50,000<small class="align-bottom">/project</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Multi-platform Integration</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Learning Capabilities</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Custom Workflow Design</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Enterprise Chatbot -->
+            <div class="price-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Enterprise Chatbot</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>1,00,000+<small class="align-bottom">/project</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Advanced NLP</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Voice Integration</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>24/7 Customer Support</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Predictive Modeling Services -->
+<div class="pricing-category">
+    <h4 class="text-center">Predictive Modeling</h4>
+    <div class="pricing-grid">
+        <!-- Basic Forecasting -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Forecasting</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>10,000<small class="align-bottom">/analysis</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Customer Behavior Prediction</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Market Trend Analysis</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Advanced Forecasting -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Advanced Forecasting</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>25,000<small class="align-bottom">/analysis</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Risk Assessment</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>ROI Forecasting</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Custom Predictive Modeling -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Custom Predictive Modeling</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>50,000+<small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Tailored Algorithms</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Long-term Trend Analysis</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Strategic Insights</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Data Visualization Services -->
+<div class="pricing-category">
+    <h4 class="text-center">Data Visualization</h4>
+    <div class="pricing-grid">
+        <!-- Basic Visualization -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Visualization</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>10,000<small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Interactive Dashboards</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Real-time Visualization</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Professional Visualization -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Professional Visualization</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>25,000<small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Reports</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Data Storytelling</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Visualization -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Enterprise Visualization</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>50,000+<small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Advanced Analytics Integration</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Multi-source Data Aggregation</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    
+                    <!-- Branding & Creative Services -->
+<div class="pricing-category">
+    <div id="branding"></div>
+    <h4 class="text-center mb-4">Branding & Creative Services</h4>
+    <div class="pricing-grid">
+        <!-- Logo Design Basic -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Logo Package</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>5,000
+                    <small class="align-bottom">/package</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Logo Creation</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>2 Design Concepts</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Vector Files</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>3 Revisions</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Logo Design Professional -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Professional Logo Package</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>10,000
+                    <small class="align-bottom">/package</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Logo Creation</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>5 Design Concepts</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Vector Files</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Unlimited Revisions</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Social Media Profile Optimization</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Logo Design Enterprise -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Enterprise Logo Package</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>20,000
+                    <small class="align-bottom">+/package</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Logo Creation</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Unlimited Design Concepts</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Vector Files</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Unlimited Revisions</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Brand Guidelines Included</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Business Card Design</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Brand Guidelines -->
+<div class="pricing-category">
+    <h4 class="text-center">Brand Guidelines</h4>
+    <div class="pricing-grid">
+        <!-- Basic Brand Guidelines -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Brand Guidelines</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>8,000
+                    <small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Color Palettes</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Typography Selection</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Basic Usage Guidelines</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Professional Brand Guidelines -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Professional Brand Guidelines</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>15,000
+                    <small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Color Palettes</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Typography Selection</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Detailed Usage Guidelines</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Brand Voice & Tone</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Brand Guidelines -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Enterprise Brand Guidelines</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>30,000
+                    <small class="align-bottom">+/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Comprehensive Brand Standards</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Advanced Visual Identity</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Multi-platform Consistency</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Brand Voice & Tone Development</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Visual Identity -->
+<div class="pricing-category">
+    <h4 class="text-center">Visual Identity</h4>
+    <div class="pricing-grid">
+        <!-- Basic Visual Identity -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Visual Identity</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>10,000
+                    <small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Brand Elements</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Social Media Assets</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Basic Marketing Materials</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Professional Visual Identity -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Professional Visual Identity</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>25,000
+                    <small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Brand Elements</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Marketing Materials</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Social Media Assets</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Business Stationery</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Visual Identity -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Enterprise Visual Identity</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>50,000
+                    <small class="align-bottom">+/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Complete Visual Language</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Brand Elements</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Advanced Marketing Materials</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Packaging Design Integration</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Packaging Design -->
+<div class="pricing-category">
+    <h4 class="text-center">Packaging Design</h4>
+    <div class="pricing-grid">
+        <!-- Basic Packaging Design -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Packaging Design</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>15,000
+                    <small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Packaging</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Label Design</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Basic Print Management</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Professional Packaging Design -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Professional Packaging Design</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>30,000
+                    <small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Packaging</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Label Design</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Product Photography</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Advanced Print Management</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Packaging Design -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Enterprise Packaging Design</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>50,000
+                    <small class="align-bottom">+/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Premium Custom Packaging</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>High-End Label Design</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Professional Product Photography</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Full Print Management</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Shelf Testing & Feedback</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    
+
+                    <!-- Video Marketing Services -->
+                    <div class="pricing-category mb-5">
+                        <div id="video-marketing"></div>
+                        <div class="section-header text-center">
+                            <h4 class="mb-4">Video Marketing Services</h4>
+                        </div>
+                        
+                        <div class="pricing-grid">
+                            <!-- Live Streaming -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Live Streaming</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>10,000
+                                        <small class="align-bottom">/event</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Multi-platform Streaming</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Q&A Sessions</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Engagement Tracking</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Technical Support</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- 360-Degree Videos -->
+                            <div class="price-item featured-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">360° Videos</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>25,000
+                                        <small class="align-bottom">/video</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>Immersive Experience</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Product Demos</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Interactive Elements</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>VR Compatible</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+
+                            <!-- Short-Form Video -->
+                            <div class="price-item">
+                                <div class="border-bottom p-4">
+                                    <h5 class="text-primary">Short-Form Video</h5>
+                                    <h1 class="display-5 mb-0">
+                                        <small class="align-top">₹</small>5,000
+                                        <small class="align-bottom">/video</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <ul class="price-features">
+                                        <li><i class="fa fa-check text-primary me-3"></i>TikTok & Reels</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Trending Content</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>High Engagement</li>
+                                        <li><i class="fa fa-check text-primary me-3"></i>Platform Optimization</li>
+                                    </ul>
+                                    <a class="btn btn-primary py-2 px-4 mt-3" href="contact.html">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+            <!-- Website Maintenance Services -->
+            <div class="pricing-category">
+                <div id="website-maintenance"></div>
+                <h4 class="text-center mb-4">Website Maintenance Services</h4>
+                <div class="pricing-grid">
+                    <!-- Basic Maintenance -->
+                    <div class="price-item">
+                        <div class="border-bottom p-4">
+                            <h5 class="text-primary">Basic Maintenance</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top">₹</small>5,000
+                                <small class="align-bottom">/month</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <ul class="price-features">
+                                <li><i class="fa fa-check text-primary me-3"></i>Regular Updates</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Security Monitoring</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Weekly Backups</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Basic SEO Monitoring</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>2 Content Updates</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Email Support</li>
+                            </ul>
+                            <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                        </div>
+                    </div>
+
+                    <!-- Standard Maintenance -->
+                    <div class="price-item featured-item">
+                        <div class="border-bottom p-4">
+                            <h5 class="text-primary">Standard Maintenance</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top">₹</small>10,000
+                                <small class="align-bottom">/month</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <ul class="price-features">
+                                <li><i class="fa fa-check text-primary me-3"></i>Priority Updates</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Enhanced Security</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Daily Backups</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Performance Optimization</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>5 Content Updates</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>SEO Optimization</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Analytics Reports</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Priority Support</li>
+                            </ul>
+                            <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                        </div>
+                    </div>
+
+                    <!-- Premium Maintenance -->
+                    <div class="price-item">
+                        <div class="border-bottom p-4">
+                            <h5 class="text-primary">Premium Maintenance</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top">₹</small>20,000
+                                <small class="align-bottom">/month</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <ul class="price-features">
+                                <li><i class="fa fa-check text-primary me-3"></i>24/7 Monitoring</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Advanced Security</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Real-time Backups</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>CDN Integration</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Unlimited Updates</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Advanced SEO</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Monthly Strategy</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>24/7 Support</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Dedicated Manager</li>
+                            </ul>
+                            <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX Design Services -->
+            <div class="pricing-category">
+                <div id="ui-ux-design"></div>
+                <h4 class="text-center mb-4">UI/UX Design Services</h4>
+                <div class="pricing-grid">
+                    <!-- Basic UI/UX Package -->
+                    <div class="price-item">
+                        <div class="border-bottom p-4">
+                            <h5 class="text-primary">Basic Design</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top">₹</small>25,000
+                                <small class="align-bottom">/project</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <ul class="price-features">
+                                <li><i class="fa fa-check text-primary me-3"></i>5 Page Designs</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>User Research</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Wireframing</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Basic Prototyping</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Mobile Responsive</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>2 Revisions</li>
+                            </ul>
+                            <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                        </div>
+                    </div>
+
+                    <!-- Professional UI/UX Package -->
+                    <div class="price-item featured-item">
+                        <div class="border-bottom p-4">
+                            <h5 class="text-primary">Professional Design</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top">₹</small>50,000
+                                <small class="align-bottom">/project</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <ul class="price-features">
+                                <li><i class="fa fa-check text-primary me-3"></i>10 Page Designs</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Competitor Analysis</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>User Personas</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>User Journey Maps</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Interactive Prototypes</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Custom Icons/Graphics</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Style Guide</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>5 Revisions</li>
+                            </ul>
+                            <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise UI/UX Package -->
+                    <div class="price-item">
+                        <div class="border-bottom p-4">
+                            <h5 class="text-primary">Enterprise Design</h5>
+                            <h1 class="display-5 mb-0">
+                                <small class="align-top">₹</small>100,000+
+                                <small class="align-bottom">/project</small>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <ul class="price-features">
+                                <li><i class="fa fa-check text-primary me-3"></i>Complete Design System</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>In-depth Research</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Usability Testing</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Advanced Prototyping</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Micro-interactions</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Animation Library</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Design Documentation</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Developer Handoff</li>
+                                <li><i class="fa fa-check text-primary me-3"></i>Unlimited Revisions</li>
+                            </ul>
+                            <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Additional AI Services -->
+    <div class="pricing-category">
+        <h4 class="text-center">Advanced AI Solutions</h4>
+        
+        <!-- AI Content Generation -->
+        <div class="pricing-grid">
+            <div class="price-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Basic Content Generation</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>5,000<small class="align-bottom">/month</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Blog Post Generation</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Social Media Captions</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+
+            <div class="price-item featured-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Professional Content Generation</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>15,000<small class="align-bottom">/month</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Ad Copy Creation</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Content Optimization</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+
+            <div class="price-item">
+                <div class="border-bottom p-4">
+                    <h5 class="text-primary">Enterprise Content Generation</h5>
+                    <h1 class="display-5 mb-0">
+                        <small class="align-top">₹</small>30,000+<small class="align-bottom">/month</small>
+                    </h1>
+                </div>
+                <div class="p-4 pt-0">
+                    <ul class="price-features">
+                        <li><i class="fa fa-check text-primary me-3"></i>Multi-format Content</li>
+                        <li><i class="fa fa-check text-primary me-3"></i>Custom Brand Voice</li>
+                    </ul>
+                    <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- AI Customer Segmentation -->
+<div class="pricing-category">
+    <h4 class="text-center">AI Customer Segmentation</h4>
+    <div class="pricing-grid">
+        <!-- Basic Segmentation -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Segmentation</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>10,000<small class="align-bottom">/analysis</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Behavioral Pattern Analysis</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Dynamic Segmentation</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Advanced Segmentation -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Advanced Segmentation</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>25,000<small class="align-bottom">/analysis</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Predictive Demographics</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Purchase Pattern Recognition</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Segmentation -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Enterprise Segmentation</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>50,000+<small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Hyper-targeted Audiences</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Real-time Updates</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI-Powered Lead Scoring -->
+<div class="pricing-category">
+    <h4 class="text-center">AI-Powered Lead Scoring</h4>
+    <div class="pricing-grid">
+        <!-- Basic Lead Scoring -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Lead Scoring</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>15,000<small class="align-bottom">/month</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Automated Lead Scoring</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Engagement Tracking</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Professional Lead Scoring -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Professional Lead Scoring</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>30,000<small class="align-bottom">/month</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Conversion Probability Analysis</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Priority-based Routing</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Lead Scoring -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Enterprise Lead Scoring</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>60,000+<small class="align-bottom">/month</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Scoring Models</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>CRM Integration</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Voice Search Optimization -->
+<div class="pricing-category">
+    <h4 class="text-center">Voice Search Optimization</h4>
+    <div class="pricing-grid">
+        <!-- Basic Optimization -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Basic Optimization</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>10,000<small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Natural Language Processing</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Featured Snippet Targeting</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Advanced Optimization -->
+        <div class="price-item featured-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Advanced Optimization</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>25,000<small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Voice Query Optimization</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Local Search Optimization</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Optimization -->
+        <div class="price-item">
+            <div class="border-bottom p-4">
+                <h5 class="text-primary">Enterprise Optimization</h5>
+                <h1 class="display-5 mb-0">
+                    <small class="align-top">₹</small>50,000+<small class="align-bottom">/project</small>
+                </h1>
+            </div>
+            <div class="p-4 pt-0">
+                <ul class="price-features">
+                    <li><i class="fa fa-check text-primary me-3"></i>Multi-platform Voice Integration</li>
+                    <li><i class="fa fa-check text-primary me-3"></i>Custom Voice Strategy</li>
+                </ul>
+                <a class="btn btn-primary py-2 px-4" href="contact.html">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Optional: Add this script to check if modals are properly initialized -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verify modal functionality
+            const modals = [
+                'webModal',
+                'mobileAppModal',
+                'maintenanceModal',
+                'uiuxModal',
+                'digitalMarketingModal'
+            ];
+
+            modals.forEach(modalId => {
+                const modalElement = document.getElementById(modalId);
+                if (modalElement) {
+                    const bsModal = new bootstrap.Modal(modalElement);
+                    console.log(`${modalId} initialized successfully`);
+                } else {
+                    console.error(`${modalId} not found in the document`);
+                }
+            });
+        });
+        </script>
+    </div>
+</div>
+
+<!-- Footer Start -->
+<div class="container-fluid text-light footer">
+    <div class="footer-top">
+        <div class="container py-5">
+            <div class="row justify-content-between align-items-start" style="margin: 0 -60px;">
+                <!-- Address Section -->
+                <div class="col-lg-3 col-md-3 footer-section" style="margin: 0 60px;">
+                    <h4 class="text-white mb-4">Our Office</h4>
+                    <div class="footer-info">
+                        <div class="d-flex align-items-center contact-item">
+                            <i class="fa fa-map-marker-alt me-3"></i>
+                            <span>Nungambakkam, Chennai</span>
+                        </div>
+                        <div class="d-flex align-items-center contact-item mt-3">
+                            <i class="fa fa-phone-alt me-3"></i>
+                            <span>+91 6380853075</span>
+                        </div>
+                        <div class="d-flex align-items-center contact-item mt-3">
+                            <i class="fa fa-envelope me-3"></i>
+                            <span>info@navigotechsolutions.com</span>
+                        </div>
+                        <div class="d-flex pt-4 gap-3 social-icons">
+                            <a class="social-btn" href="https://x.com/NavigoTech">
+                                <div class="social-circle">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                            </a>
+                            <a class="social-btn" href="https://www.facebook.com/NavigoTechsolutions/">
+                                <div class="social-circle">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                            </a>
+                            <a class="social-btn" href="https://www.instagram.com/navig_tech_solutions">
+                                <div class="social-circle">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                            </a>
+                            <a class="social-btn" href="https://www.linkedin.com/company/navigo-tech-solutions/">
+                                <div class="social-circle">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-3 footer-section" style="margin: 0 60px;">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="Services.html">Our Services</a>
+                        <a href="blog.html">Latest Blog</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-3 footer-section" style="margin: 0 60px;">
+                    <h4 class="text-white mb-4">Our Services</h4>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="Services.html">Web Development</a>
+                        <a href="Services.html">App Development</a>
+                        <a href="Services.html">Digital Marketing</a>
+                        <a href="Services.html">SEO Optimization</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Copyright Section -->
+    <div class="container-fluid copyright py-4">
+        <div class="container text-center">
+            &copy; 2024 <a href="#">NaviGo Tech Solutions</a>. All Rights Reserved.
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+</div>
+</body>
+</html>
